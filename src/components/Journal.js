@@ -11,7 +11,7 @@ const Journal = () => {
 
     const { state, dispatch } = useContext(AppState)
 
-    const { user, journal } = state
+    const { user } = state
 
     const handleLogout = () => {
         localStorage.removeItem('JOURNAL_USER');
