@@ -23,7 +23,7 @@ const Journal = () => {
         <div className = 'journal'>
             <Title />
             <h3 className = 'welcome'>Welcome to Your Journal <span>{user.username}.</span></h3>
-            <JournalEntries journal = {journal} dispatch = {dispatch}/>
+            <JournalEntries />
             <JournalAdd />
             <button className = 'logout' onClick = {handleLogout}>Logout</button>
         </div>

@@ -6,7 +6,7 @@ export const AppState = createContext()
 const GlobalStateProvider = ({children}) => {
 
     const userInStoreage = JSON.parse(localStorage.getItem("JOURNAL_USER"))
-    const initialState = { user :  userInStoreage ? userInStoreage : {}, journal : [], message : {}, featuredEntry : {}}
+    const initialState = { user :  userInStoreage ? userInStoreage : {}, journal : [], message : {}, featuredEntry : {}, currentlyEdit : false, editEntry : {}}
     const [ state, dispatch ] = useReducer(globalReducer, initialState)
 
 

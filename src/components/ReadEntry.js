@@ -10,7 +10,7 @@ const ReadEntry = () => {
 
 
     const clearFeature = () => {
-        dispatch({type : ACTIONS.SET_FEAUTURED, payload : {}})
+        dispatch({type : ACTIONS.SET_FEATURED, payload : {}})
     }
 
 
@@ -19,7 +19,7 @@ const ReadEntry = () => {
 
         const exitIfOutside = (e) => {
             if(e.srcElement.className === 'read__entry'){
-                return dispatch({type : ACTIONS.SET_FEAUTURED, payload : {}})
+                return dispatch({type : ACTIONS.SET_FEATURED, payload : {}})
             }
             return 
         }

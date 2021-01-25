@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../css/journalentries.css"
 import { ACTIONS } from "../context/actions"
+import { AppState } from "../context/GlobalState"
 
-
-const JournalEntries = ({journal, dispatch}) => {
-
+const JournalEntries = () => {
+    
+    const { state, dispatch} = useContext(AppState)
+    const { journal , currentlyEdit } = state
 
     const cropText = (str) => {
         const newText = str.slice(0, 36) + '...'
@@ -21,7 +23,14 @@ const JournalEntries = ({journal, dispatch}) => {
     }
 
     const handleReadJournal = (entry) => {
-        dispatch({type : ACTIONS.SET_FEAUTURED, payload : entry })
+        if(currentlyEdit) return dispatch({type : ACTIONS.SET_MESSAGE, payload :{error : 'Cannot view post while editing'}})
+        dispatch({type : ACTIONS.SET_FEATURED, payload : entry })
+    }
+
+    const handleEdit = (entry) => {
+        dispatch({type : ACTIONS.EDIT_ENTRY, payload : entry})
+        dispatch({type : ACTIONS.TOGGLE_EDIT, payload : true})
+
     }
 
     return (
@@ -37,6 +46,7 @@ const JournalEntries = ({journal, dispatch}) => {
                         </div>
                         <p className = 'entry__middle'>{ cropText(entry.content)} </p>
                         <i className="fas fa-book-open entry__right" onClick ={() =>handleReadJournal(entry)} > Read</i>
+                        <i className="fas fa-edit entry__right" onClick = {()=> handleEdit(entry)}>Edit</i>
                     </div>
                 ))
             }

@@ -43,10 +43,10 @@ const Register = () => {
             <Title />
             <form className="register__container" onSubmit = {handleSubmit}>
                 <h4 className = 'form__title'>Fill in to Register!</h4>
-                <input type="text" name = 'name' placeholder = 'name' title = 'name' value = {name} onChange = {handleChange}/>
-                <input type="text" name = 'username' placeholder = 'username' title = 'username' value = {username} onChange = {handleChange}/>
-                <input type="password" name = 'password' placeholder = 'password' title = 'password' value = {password} onChange = {handleChange}/>
-                <input type="text" name = 'bio' placeholder = 'A bit about yourself...' title = 'User Bio' value = {bio} onChange = {handleChange}/>
+                <input type="text" name = 'name' autoComplete = "on" placeholder = 'name' title = 'name' value = {name} onChange = {handleChange}/>
+                <input type="text" name = 'username' autoComplete = "on" placeholder = 'username' title = 'username' value = {username} onChange = {handleChange}/>
+                <input type="password" name = 'password' autoComplete="new-password" placeholder = 'password' title = 'password' value = {password} onChange = {handleChange}/>
+                <input type="text" name = 'bio' autoComplete = "on" placeholder = 'A bit about yourself...' title = 'User Bio' value = {bio} onChange = {handleChange}/>
                 <button className = 'form__send'>Register Now!</button>
             </form>
         </div>

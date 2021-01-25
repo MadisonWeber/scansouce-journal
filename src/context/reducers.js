@@ -10,8 +10,18 @@ const globalReducer = (state, action) => {
             return {...state, journal : []}
         case ACTIONS.SET_MESSAGE:
             return {...state, message : action.payload}
-        case ACTIONS.SET_FEAUTURED:
+        case ACTIONS.SET_FEATURED:
             return { ...state, featuredEntry : action.payload}
+        case ACTIONS.EDIT_ENTRY:
+            return {...state, editEntry : action.payload}
+        case ACTIONS.UPDATE_EDIT:
+            let updatedJournal = state.journal.map( journal => {
+                if(journal.id === action.payload.id) return action.payload
+                return journal
+            })
+            return {...state, journal : updatedJournal}
+        case ACTIONS.TOGGLE_EDIT:
+            return{ ...state, currentlyEdit : action.payload}
         default:
             return state
     }

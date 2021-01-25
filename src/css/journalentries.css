@@ -78,6 +78,11 @@
     color: palegreen;
 }
 
+.fa-edit{
+    margin-left: 20px;
+    cursor: pointer;
+    color: powderblue;
+}
 
 @media(max-width : 480px){
     .journal__entries{
