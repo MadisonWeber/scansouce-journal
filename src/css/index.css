@@ -1,0 +1,62 @@
+/* 
+font-family: 
+font-family: 'Raleway', sans-serif; 
+*/
+
+:root{
+  --font-title: 'Raleway', sans-serif; 
+  --font-text : 'Nunito', sans-serif;
+  --background-color-second:  #1a2635;
+  --background-color-third: #295fa0;
+  --grey-color : rgb(217, 236, 228);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Raleway', sans-serif;  
+}
+
+i {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+
+.title {
+  color: white;  
+  font-size: 60px;
+  font-family: var(--font-title);
+  background: url("../images/stock.jpg");
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle{
+  font-size: 14px;
+}
+
+
+@keyframes opacityIn {
+  from {
+    opacity: 0;
+    
+  }to{
+    opacity: 1;
+  }
+}
+
+@media(max-width : 480px){
+  .title{
+    font-size: 40px;
+  }
+}

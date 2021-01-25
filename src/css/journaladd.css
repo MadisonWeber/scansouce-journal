@@ -1,0 +1,83 @@
+.journal__add{
+    width: min(80%, 600px);
+    min-height: 600px;
+    background-color: var(--background-color-third);
+    border-radius: 10px;
+    margin-top: 60px;
+    padding: 10px 20px;
+    color: white;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add__form{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    align-items: center;
+}
+
+.journal__add h3{
+    font-family: var(--text-font);
+    font-weight: 700;
+    font-size: 24px;
+    margin: 20px 0;
+    color: black;
+  
+}
+
+.add__form input,
+.add__form textarea{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}
+
+
+.add__form textarea{
+    border-radius: 10px;
+    resize: none;
+    min-height: 300px;
+}
+
+.add__form label{
+    width: 80px;
+    border-radius: 50%;
+    align-self: flex-start;
+    margin: 20px 0;
+    transition: transform 200ms ease-in;
+    white-space: nowrap;
+}
+
+.submit__journal{
+    background: linear-gradient(dodgerblue, purple);
+    height: 80px;
+    width: 80px;
+    align-self: flex-end;
+    border-radius: 50%;
+    margin: 14px 0 ;
+}
+
+
+.submit__journal:hover{
+    transform: scale(1.02);
+}
+
+.fa-plus{
+    color: white;
+    font-size: 40px;
+}
+
+@media(max-width : 480px){
+    .journal__add{
+        width: 100%;
+        padding: 10px;
+    }
+  }

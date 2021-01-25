@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Register from './components/Register'
+import Journal from './components/Journal'
+import ShowMessage from './components/ShowMessage'
+import ReadEntry from './components/ReadEntry'
+import './css/App.css';
+import { useContext } from 'react'
+import { AppState } from './context/GlobalState'
 
 function App() {
+
+  const { state } = useContext(AppState)
+  const { user, featuredEntry } = state
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {user.username ?  <Journal /> : <Register />}
+      {featuredEntry.title && <ReadEntry /> }
+      <ShowMessage />
     </div>
   );
 }

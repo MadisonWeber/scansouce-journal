@@ -1,0 +1,49 @@
+.read__entry{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(20, 20, 20, .9);
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.read__entry__container{
+    align-self: flex-start;
+    background-color: white;
+    width: min(100%, 500px);
+    min-height: 300px;
+    margin-top: 100px;
+    border-radius: 10px;
+    position: relative;
+    animation: opacityIn 200ms ease-in;
+    padding: 40px 20px;
+}
+
+.read__entry__container > .fa-times{
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+}
+
+.read__entry__container > small{
+    display: inline-block;
+    color: rgb(199, 81, 81);
+    margin-bottom: 40px;
+ 
+}
+
+.read__entry__container > p{
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.read__entry__container span{
+    color: dodgerblue;
+}
